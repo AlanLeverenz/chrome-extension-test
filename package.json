@@ -1,0 +1,20 @@
+{
+    "private": true,
+    "scripts": {
+        "local": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js",
+        "staging": "cross-env NODE_ENV=staging node_modules/webpack/bin/webpack.js",
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js",
+        "dev": "npm run local",
+        "prod": "npm run production",
+        "watch": "npm run local -- --watch"
+    },
+    "devDependencies": {
+        "cross-env": "^7.0.3",
+        "laravel-mix": "^6.0.13",
+        "sass": "^1.32.8",
+        "sass-loader": "^11.0.1"
+    },
+    "dependencies": {
+        "fsevents": "^2.3.2"
+    }
+}
