@@ -2,13 +2,13 @@
 chrome.runtime.onInstalled.addListener(() => {
     chrome.storage.sync.set({
         toggleSitesActive: false,
-        togglesitesList: 'example.com'
+        toggleSitesList: 'example.com'
     }, () => {});
 });
 
 // set up the initial chrome storage values
 let toggleSitesActive = false;
-let togglesitesList = 'example.com';
+let toggleSitesList = 'example.com';
 
 // replace the initial values above with the ones from synced storage
 chrome.storage.sync.get([
@@ -16,7 +16,7 @@ chrome.storage.sync.get([
     'toggleSitesList'
 ], (result) => {
     toggleSitesActive = result.toggleSitesActive;
-    togglesitesList = result.toggleSitesList;
+    toggleSitesList = result.toggleSitesList;
 });
 
 // on each site request, block it if it's in toggleSitesList
@@ -51,10 +51,10 @@ chrome.webRequest.onBeforeRequest.addListener(
 chrome.storage.onChanged.addListener((changes, namespace) => {
     if (namespace === 'sync') {
         if (changes.toggleSitesActive) {
-            toggleSitesActive = changes.togglesitesActive.newValue;
+            toggleSitesActive = changes.toggleSitesActive.newValue;
         }
         if (changes.togglesitesList) {
-            toggleSitesList = changes.togglesitesList.newValue;
+            toggleSitesList = changes.toggleSitesList.newValue;
         }
     }
 })

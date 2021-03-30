@@ -1,12 +1,13 @@
 {
     "private": true,
     "scripts": {
-        "local": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js",
-        "staging": "cross-env NODE_ENV=staging node_modules/webpack/bin/webpack.js",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js",
-        "dev": "npm run local",
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
         "prod": "npm run production",
-        "watch": "npm run local -- --watch"
+        "production": "mix --production"
     },
     "devDependencies": {
         "cross-env": "^7.0.3",
