@@ -32,7 +32,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       active: true,
       list: "example.com",
-      icon: {
+      icons: {
         active: 'images/icon-48x48.png',
         inactive: 'images/icon-48x48-off.png'
       }
