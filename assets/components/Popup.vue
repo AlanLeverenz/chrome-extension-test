@@ -18,7 +18,11 @@ export default {
     data() {
         return {
             active: true,
-            list: "example.com"
+            list: "example.com",
+            icon: {
+                active: 'images/icon-48x48.png',
+                inactive: 'images/icon-48x48-off.png'
+            }
         }
     },
     created() {
@@ -38,6 +42,10 @@ export default {
             chrome.storage.sync.set({
                 toggleSitesActive: active
             }, () => {}); // null callback
+
+            chrome.browserAction.setIcon({
+                path: this.icons[active ? 'active' : 'inactive']
+            })
         },
         saveList() {
             chrome.storage.sync.set({

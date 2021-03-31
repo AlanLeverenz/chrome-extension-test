@@ -31,7 +31,11 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       active: true,
-      list: "example.com"
+      list: "example.com",
+      icon: {
+        active: 'images/icon-48x48.png',
+        inactive: 'images/icon-48x48-off.png'
+      }
     };
   },
   created: function created() {
@@ -53,6 +57,10 @@ __webpack_require__.r(__webpack_exports__);
       chrome.storage.sync.set({
         toggleSitesActive: active
       }, function () {}); // null callback
+
+      chrome.browserAction.setIcon({
+        path: this.icons[active ? 'active' : 'inactive']
+      });
     },
     saveList: function saveList() {
       chrome.storage.sync.set({
