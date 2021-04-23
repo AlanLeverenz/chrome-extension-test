@@ -28,7 +28,7 @@ export default {
     created() {
         // to generate global variables
         // (results) is the callback function
-        // can use chrome API even if we are using Vue
+        // can use chrome API even if we are using Vue because running inside extension window
         chrome.storage.sync.get(['toggleSitesActive', 'toggleSitesList'], (results) => {
             this.active = result.toggleSitesActive;
             this.list = result.toggleSitesList;
